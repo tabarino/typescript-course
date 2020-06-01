@@ -1,7 +1,7 @@
 {
     "name": "typescript-course",
     "version": "1.0.0",
-    "description": "",
+    "description": "Typescript Course",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
     "homepage": "https://github.com/tabarino/typescript-course#readme",
     "dependencies": {},
     "devDependencies": {
+        "ecstatic": "^4.1.4",
         "http-server": "^0.12.3",
         "typescript": "^3.9.3"
     }
