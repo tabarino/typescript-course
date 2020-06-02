@@ -16,7 +16,7 @@ function Person(name) {
 const person = new Person('Bob');
 person.sayHi();
 
-function buildPersonData({ firstName, lastName }, address = ['']) {
+function buildPersonData({ firstName, lastName }, ...address) {
     return `${ firstName } ${ lastName } ${ address }`;
 }
 
