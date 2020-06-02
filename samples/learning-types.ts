@@ -4,12 +4,16 @@ enum PlayerPosition {
     Center
 }
 
-type Player = [string, PlayerPosition];
+interface Player {
+    name: string
+    position: PlayerPosition
+}
 
-let kobe: Player = ['Kobe', PlayerPosition.Guard];
-let james: Player = ['James', PlayerPosition['Forward']];
-let shaq: Player = ['Shaq', PlayerPosition.Center];
+let michael: Player | null | undefined = {
+    name: 'Michael',
+    position: PlayerPosition.Forward
+};
 
-let players: Player[] = [kobe, james, shaq];
+michael = undefined;
 
-console.log(players);
+console.log(michael);
