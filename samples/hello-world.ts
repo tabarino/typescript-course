@@ -15,3 +15,19 @@ function Person(name) {
 
 const person = new Person('Bob');
 person.sayHi();
+
+function buildPersonData({ firstName, lastName, address }) {
+    return `${ firstName } ${ lastName } ${ address }`;
+}
+
+const firstName = 'Michael',
+    lastName = 'Jordan',
+    address = 'Staples Center'
+
+const personData = {
+    firstName,
+    lastName,
+    address
+}
+
+console.log(buildPersonData(personData));
