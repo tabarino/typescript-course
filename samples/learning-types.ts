@@ -1,8 +1,21 @@
-// Typescript will implicitly add the types to the variables
-const message = 'Hello World'; // string
-const counter = 1.2; // number
-const messageRead = false; // boolean
+type HasName = {
+    firstName?: string,
+    lastName: string
+}
 
-console.log(message);
-console.log(counter);
-console.log(messageRead);
+type HasAddress = {
+    streetName: string
+}
+
+type Person = {
+    name: HasName,
+    address?: HasAddress
+}
+
+let person: Person = {
+    name: {
+        lastName: 'Jordan'
+    }
+};
+
+console.log(person);
