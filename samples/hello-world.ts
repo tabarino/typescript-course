@@ -16,18 +16,23 @@ function Person(name) {
 const person = new Person('Bob');
 person.sayHi();
 
-function buildPersonData({ firstName, lastName, address }) {
+function buildPersonData({ firstName, lastName }, address = ['']) {
     return `${ firstName } ${ lastName } ${ address }`;
 }
 
+const partialAddress = ['Street Name', 'Number']
+
 const firstName = 'Michael',
-    lastName = 'Jordan',
-    address = 'Staples Center'
+    lastName = 'Jordan';
 
 const personData = {
     firstName,
-    lastName,
-    address
+    lastName
 }
 
-console.log(buildPersonData(personData));
+const address = [
+    ...partialAddress,
+    'Staples Center'
+];
+
+console.log(buildPersonData(personData, address));
