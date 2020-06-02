@@ -1,8 +1,10 @@
+import { buildPersonData } from './build-person-data';
+
 const message = 'Hello World';
-const sayHello = message => console.log(message);
+const sayHello = (message: string) => console.log(message);
 sayHello(message);
 
-function Person(name) {
+function Person(name: string) {
     this.name = name;
     this.sayHi = function () {
         // You can keep using the "this" when you use the arrow function
@@ -15,10 +17,6 @@ function Person(name) {
 
 const person = new Person('Bob');
 person.sayHi();
-
-function buildPersonData({ firstName, lastName }, ...address) {
-    return `${ firstName } ${ lastName } ${ address }`;
-}
 
 const partialAddress = ['Street Name', 'Number']
 

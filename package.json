@@ -17,10 +17,11 @@
         "url": "https://github.com/tabarino/typescript-course/issues"
     },
     "homepage": "https://github.com/tabarino/typescript-course#readme",
-    "dependencies": {},
+    "dependencies": {
+        "typescript": "^3.9.3"
+    },
     "devDependencies": {
         "ecstatic": "^4.1.4",
-        "http-server": "^0.12.3",
-        "typescript": "^3.9.3"
+        "http-server": "^0.12.3"
     }
 }
