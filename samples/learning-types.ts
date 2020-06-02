@@ -1,19 +1,9 @@
-enum PlayerPosition {
-    Guard,
-    Forward,
-    Center
+function createMessage(name: string): string {
+    if (name) {
+        return `Hello, my name is ${ name }`;
+    }
+
+    return '';
 }
 
-interface Player {
-    name: string
-    position: PlayerPosition
-}
-
-let michael: Player | null | undefined = {
-    name: 'Michael',
-    position: PlayerPosition.Forward
-};
-
-michael = undefined;
-
-console.log(michael);
+console.log(createMessage('Ivan'));
