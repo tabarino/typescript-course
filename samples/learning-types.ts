@@ -1,21 +1,11 @@
-type HasName = {
-    firstName?: string,
-    lastName: string
+type MessageCreator = (name: string) => string;
+
+function createHelloMessage(name: string, extra?: number): string {
+    return `Hello, my name is ${ name }`;
 }
 
-type HasAddress = {
-    streetName: string
-}
+const creator: MessageCreator = createHelloMessage;
 
-type Person = {
-    name: HasName,
-    address?: HasAddress
-}
+const message = creator('Michael');
 
-let person: Person = {
-    name: {
-        lastName: 'Jordan'
-    }
-};
-
-console.log(person);
+console.log(message);
