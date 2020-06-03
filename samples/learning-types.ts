@@ -1,9 +1,18 @@
-function createMessage(name: string): string {
-    if (name) {
-        return `Hello, my name is ${ name }`;
-    }
-
-    return '';
+interface HasName {
+    firstName: string,
+    lastName: string
 }
 
-console.log(createMessage('Ivan'));
+interface HasAddress {
+    address: string
+}
+
+type Player = (HasName & HasAddress) | null;
+
+const player: Player = {
+    firstName: "Magic",
+    lastName: "Johnson",
+    address: "Staples"
+};
+
+console.log(player);
