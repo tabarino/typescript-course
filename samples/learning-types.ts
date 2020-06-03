@@ -1,18 +1,6 @@
-interface HasName {
-    firstName: string,
-    lastName: string
-}
+import * as _ from 'lodash';
 
-interface HasAddress {
-    address: string
-}
+const colors = ['Red', 'Green', 'Blue'];
+const firstColor = _.first(colors);
 
-type Player = (HasName & HasAddress) | null;
-
-const player = {
-    firstName: "Magic",
-    lastName: "Johnson",
-    address: "Staples"
-};
-
-console.log(player);
+console.log(firstColor);
