@@ -1,6 +1,3 @@
-import { _ } from 'my-lodash';
-
-const colors = ['Red', 'Green', 'Blue'];
-const firstColor = _.first(colors);
-
-console.log(firstColor);
+function buildMessage(message: string): void {
+    alert('Message not available');
+}
