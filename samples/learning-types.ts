@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import { _ } from 'my-lodash';
 
 const colors = ['Red', 'Green', 'Blue'];
 const firstColor = _.first(colors);
