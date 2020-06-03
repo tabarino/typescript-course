@@ -16,3 +16,12 @@ const player: Player = {
 };
 
 console.log(player);
+
+let myVar: any;
+myVar = undefined;
+
+let counter = 0; // It is a number by type inference
+counter = myVar;
+
+let str: string = 'test';
+str = myVar;
