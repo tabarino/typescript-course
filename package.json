@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "es6": "./node_modules/.bin/http-server -c-1 .",
-        "types-examples": "node ./samples/learning-types.js"
+        "types-examples": "node ./samples/learning-types.js",
+        "start": "./node_modules/.bin/ts-node ./server/server.ts"
     },
     "repository": {
         "type": "git",
@@ -20,12 +21,17 @@
     "homepage": "https://github.com/tabarino/typescript-course#readme",
     "dependencies": {
         "lodash": "^4.17.15",
+        "mysql2": "^2.1.0",
+        "sequelize": "^5.21.11",
         "typescript": "^3.9.3"
     },
     "devDependencies": {
+        "@types/bluebird": "^3.5.32",
         "@types/lodash": "^4.14.155",
         "@types/node": "^14.0.9",
+        "@types/validator": "^13.0.0",
         "ecstatic": "^4.1.4",
-        "http-server": "^0.12.3"
+        "http-server": "^0.12.3",
+        "ts-node": "^8.10.2"
     }
 }
