@@ -18,7 +18,7 @@ function Person(name: string) {
 const person = new Person('Bob');
 person.sayHi();
 
-const partialAddress = ['Street Name', 'Number']
+const partialAddress = ['Street Name', 'Number'];
 
 const firstName = 'Michael',
     lastName = 'Jordan';
