@@ -2,8 +2,10 @@ import { findAllCourses } from '../queries/findAllCourses';
 import { Request, Response } from 'express';
 
 export function apiGetAllCourses(req: Request, res: Response) {
-    findAllCourses()
-        .then(results => {
-            res.status(200).json({ results });
-        });
+    throw new Error('Error Occurred');
+
+    // findAllCourses()
+    //     .then(results => {
+    //         res.status(200).json({ results });
+    //     });
 }
