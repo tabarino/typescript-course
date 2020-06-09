@@ -26,7 +26,18 @@ class SuperHero {
     }
 }
 
-const superman = new SuperHero('Superman', Editor.DC, 1938);
-console.log('Superman: ', superman);
+// FlyingHero inherits SuperHero
+class FlyingHero extends SuperHero {
+    fly(message: string) {
+        console.log(message);
+    }
+}
 
+const superman = new FlyingHero('Superman', Editor.DC, 1938);
+console.log('Superman: ', superman);
 console.log(superman.createMessage());
+superman.fly('Up and Away!!!');
+
+const greenLantern = new FlyingHero('Green Lantern', Editor.DC, 1959);
+console.log('Green Lantern: ', greenLantern);
+console.log(greenLantern.createMessage());
