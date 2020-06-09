@@ -3,7 +3,7 @@ enum Editor {
     DC
 }
 
-class SuperHero {
+abstract class SuperHero {
     constructor(
         // Public is accessible outside this class and can be changed
         public name: string,
@@ -26,6 +26,8 @@ class SuperHero {
             ${this.creationYear}
         `;
     }
+
+    abstract createMessage2(): string;
 }
 
 // FlyingHero inherits SuperHero
@@ -39,11 +41,21 @@ class FlyingHero extends SuperHero {
         `;
     }
 
+    // You need to implement all abstract functions of the parent class
+    createMessage2() {
+        return `
+            Superhero 2 - Implement Abstract Function:
+            ${this.name}
+            ${Editor[this.editor]}
+        `;
+    }
+
     fly(message: string) {
         console.log(message);
 
         const superman = new FlyingHero('Superman', Editor.DC, 1938);
         console.log(superman.createMessage());
+        console.log(superman.createMessage2());
     }
 }
 
