@@ -3,9 +3,19 @@ enum Editor {
     DC
 }
 
-abstract class SuperHero {
+// An interface can be applied only with public properties
+interface Hero {
+    name: string;
+}
+
+const batman: Hero = {
+    name: 'Batman'
+}
+
+abstract class SuperHero implements Hero{
     private static readonly STATIC_SUPERHERO3_LABEL = 'Superhero3:';
 
+    // An interface can be applied only with public properties
     constructor(
         // Public is accessible outside this class and can be changed
         public name: string,
@@ -24,9 +34,9 @@ abstract class SuperHero {
     protected createMessage() {
         return `
             Superhero:
-            ${this.name}
-            ${Editor[this.editor]}
-            ${this.creationYear}
+            ${ this.name }
+            ${ Editor[this.editor] }
+            ${ this.creationYear }
         `;
     }
 
@@ -34,22 +44,26 @@ abstract class SuperHero {
 
     static createMessage3(hero: SuperHero): string {
         return `
-            ${SuperHero.STATIC_SUPERHERO3_LABEL}
-            ${hero.name}
-            ${Editor[hero.editor]}
-            ${hero.creationYear}
+            ${ SuperHero.STATIC_SUPERHERO3_LABEL }
+            ${ hero.name }
+            ${ Editor[hero.editor] }
+            ${ hero.creationYear }
         `;
     }
 }
 
+interface CanFly {
+    fly(message: string): void;
+}
+
 // FlyingHero inherits SuperHero
-class FlyingHero extends SuperHero {
+class FlyingHero extends SuperHero implements CanFly {
     // We can also override the parent method
     protected createMessage() {
         return `
             Superhero Overridden:
-            ${this.name}
-            ${Editor[this.editor]}
+            ${ this.name }
+            ${ Editor[this.editor] }
         `;
     }
 
@@ -57,16 +71,16 @@ class FlyingHero extends SuperHero {
     createMessage2() {
         return `
             Superhero 2 - Implement Abstract Function:
-            ${this.name}
-            ${Editor[this.editor]}
+            ${ this.name }
+            ${ Editor[this.editor] }
         `;
     }
 
     get message() {
         return `
             Superhero - Using the get keyword:
-            ${this.name}
-            ${Editor[this.editor]}
+            ${ this.name }
+            ${ Editor[this.editor] }
         `;
     }
 
