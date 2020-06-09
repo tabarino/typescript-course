@@ -13,7 +13,20 @@ class SuperHero {
         private creationYear: number
     ) {
     }
+
+    // The default Access Modifiers of a function is public
+    // private createMessage() {
+    createMessage() {
+        return `
+            Superhero:
+            ${this.name}
+            ${Editor[this.editor]}
+            ${this.creationYear}
+        `;
+    }
 }
 
 const superman = new SuperHero('Superman', Editor.DC, 1938);
 console.log('Superman: ', superman);
+
+console.log(superman.createMessage());
