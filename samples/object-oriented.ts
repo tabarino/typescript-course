@@ -4,6 +4,8 @@ enum Editor {
 }
 
 abstract class SuperHero {
+    private static readonly STATIC_SUPERHERO3_LABEL = 'Superhero3:';
+
     constructor(
         // Public is accessible outside this class and can be changed
         public name: string,
@@ -29,6 +31,15 @@ abstract class SuperHero {
     }
 
     abstract createMessage2(): string;
+
+    static createMessage3(hero: SuperHero): string {
+        return `
+            ${SuperHero.STATIC_SUPERHERO3_LABEL}
+            ${hero.name}
+            ${Editor[hero.editor]}
+            ${hero.creationYear}
+        `;
+    }
 }
 
 // FlyingHero inherits SuperHero
@@ -88,3 +99,5 @@ console.log(greenLantern.message);
 console.log('Editor: ', greenLantern.editor2);
 greenLantern.editor2 = 'MARVEL';
 console.log('Editor: ', greenLantern.editor2);
+
+console.log(SuperHero.createMessage3(superman));
