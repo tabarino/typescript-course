@@ -5,9 +5,12 @@ enum Editor {
 
 class SuperHero {
     constructor(
+        // Public is accessible outside this class and can be changed
         public name: string,
-        public editor: Editor,
-        public creationYear: number
+        // Readonly is accessible outside this class and cannot be changed
+        readonly editor: Editor,
+        // Private is not accessible outside this class
+        private creationYear: number
     ) {
     }
 }
