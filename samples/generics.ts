@@ -11,10 +11,13 @@ class Villain extends SuperCharacter {
     
 }
 
-class SuperTeam<T> {
+class SuperTeam<T extends SuperCharacter> {
     constructor(public members: T[], public leader: T) {
     }
 }
+
+// Because of T(Generics) extends SuperCharacter the Super Team of Numbers are not allowed
+// const numbers = new SuperTeam([0, 1, 2], 0);
 
 const captainAmerica = new Hero('Captain America');
 const thor = new Hero('Thor');
