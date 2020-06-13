@@ -11,7 +11,8 @@
         "watch": "./node_modules/.bin/nodemon -V -w . --ext \".ts\" --exec \"npm run start\"",
         "oo": "node ./samples/object-oriented.js",
         "generics": "node ./samples/generics.js",
-        "decorators": "node ./samples/decorators.js"
+        "decorators": "node ./samples/decorators.js",
+        "class-decorator": "node ./samples/classDecorator.js"
     },
     "repository": {
         "type": "git",
