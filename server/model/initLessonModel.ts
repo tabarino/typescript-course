@@ -1,14 +1,14 @@
 import { Sequelize, Model, DataTypes, BuildOptions } from 'sequelize';
 
 interface Lesson extends Model {
-    url: string,
-    description: string,
-    duration: string,
-    seqNo: number,
-    courseId: number,
-    pro: boolean,
-    tags: string,
-    gitHubUrl: string
+    url: string;
+    description: string;
+    duration: string;
+    seqNo: number;
+    courseId: number;
+    pro: boolean;
+    tags: string;
+    gitHubUrl: string;
 }
 
 type LessonStatic = typeof Model & {
