@@ -9,9 +9,17 @@ const loggingLevel = LoggingLevel.DEBUG;
 
 function LogMethod(level: LoggingLevel): Function {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
-        console.log('target: ', target);
-        console.log('propertyKey: ', propertyKey);
-        console.log('descriptor: ', descriptor);
+        const originalFunction: Function = descriptor.value;
+
+        // We cannot use the arrow function in this case
+        // The arrow function doesn't preserve the context , so we have to use the normal function here
+        // descriptor.value = (...args: any[]) => {
+        descriptor.value = function (...args: any[]) {
+            if (level <= loggingLevel) {
+                console.log('Log Method - Function Called:', propertyKey, 'args:', args);
+            }
+            originalFunction.apply(this, args);
+        }
     }
 }
 
@@ -20,7 +28,7 @@ class Database {
 
     @LogMethod(LoggingLevel.DEBUG)
     saveData(data: any) {
-        console.log('Saving Data in the database: ', this.name);
+        console.log('Saving Data in the database:', this.name, 'args:', data);
     }
 }
 
