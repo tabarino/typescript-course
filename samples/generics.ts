@@ -1,24 +1,35 @@
-interface HasName {
-    name: string;
+class SuperCharacter {
+    constructor(public name: string) {
+    }
 }
 
-function cloneArray<T>(array: T[]): T[] {
-    return array.slice(0);
+class Hero extends SuperCharacter {
+    
 }
 
-const heroes: HasName[] = [
-    { name: "Superman" },
-    { name: "Batman" },
-    { name: "Green Lantern" },
-    { name: "Wonder Woman" },
-    { name: "Flash" }
-];
+class Villain extends SuperCharacter {
+    
+}
 
-const numbers = [0, 1, 2];
+class SuperTeam<T> {
+    constructor(public members: T[], public leader: T) {
+    }
+}
 
-const cloneHeroes = cloneArray(heroes);
+const captainAmerica = new Hero('Captain America');
+const thor = new Hero('Thor');
+const ironMan = new Hero('Iron Man  ');
 
-const cloneNumbers = cloneArray(numbers);
+const avengers = new SuperTeam([captainAmerica, thor, ironMan], captainAmerica);
+const avengersMembers = avengers.members;
 
-console.log('Clones', cloneHeroes);
-console.log('Clones', cloneNumbers);
+const luthor = new Villain('Luthor');
+const bizarro = new Villain('Bizarro');
+const captainCold = new Villain('Captain Cold');
+
+const legionOfDoom = new SuperTeam([luthor, bizarro, captainCold], luthor);
+const legionMembers = legionOfDoom.members;
+
+const megaCrossoverTeam = new SuperTeam([
+    captainAmerica, thor, ironMan, luthor, bizarro, captainCold
+], captainAmerica);
