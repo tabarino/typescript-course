@@ -1,2 +1,14 @@
 <h2>{{ courseDetails?.description }}</h2>
-<div>{{ courseDetails?.Lessons | json }}</div>
+
+<div class="lessons-list-container v-h-center-block-parent">
+    <table class="table lessons-list card card-strong">
+        <tbody>
+            <tr *ngFor="let lesson of courseDetails?.Lessons">
+                <td class="lesson-title">{{ lesson.description }}</td>
+                <td class="duration">
+                    <span>{{ lesson.duration }}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
